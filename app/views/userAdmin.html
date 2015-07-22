@@ -1,1 +1,16 @@
-This is the page for User Administration
+<div ng-init="getUserList()">
+    <table st-table="rowCollection" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>User Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in usersList">
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
