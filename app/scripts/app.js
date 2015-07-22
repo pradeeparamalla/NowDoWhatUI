@@ -21,9 +21,13 @@
     'nowDoWhatUiApp.header'
   ]);
 
-    app.config(function ($stateProvider, $urlRouterProvider) {
+    app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function ($stateProvider, $urlRouterProvider, $httpProvider) {
         //delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
+        $httpProvider.interceptors.push('AuthInterceptor');
+
         $urlRouterProvider.otherwise('/');
+
         $stateProvider
             .state('home', {
                 url: '/',
@@ -45,6 +49,6 @@
                 templateUrl: 'views/signup.html',
                 controller: 'signUpCtrl'
             });
-    });
+    }]);
 
 }());
