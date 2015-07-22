@@ -9,7 +9,7 @@
         var authFactory = {};
         authFactory.login = function (username, password) {
             return $http.post('/api/login', {
-                username: username,
+                userName: username,
                 password: password
             }).success(function (data) {
                 AuthToken.setToken(data.token);
@@ -81,7 +81,7 @@
         interceptorFactory.responseError = function (response) {
 
             if (response.status == 403) {
-                $location.path('/login');
+                $location.path('/signIn');
             }
 
             return $q.reject(response);

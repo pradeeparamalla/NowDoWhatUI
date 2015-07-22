@@ -22,7 +22,7 @@
         me.doLogin = function () {
             me.processing = true;
             me.error = '';
-            AuthService.login(me.loginData.username, me.loginData.password)
+            AuthService.login(me.loginData.userName, me.loginData.password)
                 .success(function (data) {
                     me.processing = false;
 
