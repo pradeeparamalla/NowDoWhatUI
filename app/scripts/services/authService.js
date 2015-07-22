@@ -14,7 +14,7 @@
             }).success(function (data) {
                 AuthToken.setToken(data.token);
                 return data;
-            })
+            });
         };
 
         authFactory.logout = function () {

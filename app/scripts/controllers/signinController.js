@@ -20,7 +20,6 @@
         });
 
         me.doLogin = function () {
-            debugger;
             me.processing = true;
             me.error = '';
             AuthService.login(me.loginData.username, me.loginData.password)
