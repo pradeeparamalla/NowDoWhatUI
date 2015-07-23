@@ -10,7 +10,7 @@
             <ul class="nav navbar-nav">
                 <li><a ui-sref="home" href="#">Home</a>
                 </li>
-                <li><a ui-sref="userAdmin" href="#">User Admin</a>
+                <li><a ui-sref="userAdmin" ng-show='isLoggedIn()' href="#">User Admin</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -20,7 +20,7 @@
                 <li><a ui-sref="signUp" ng-show='!isLoggedIn()'>Sign up</a>
                 </li>
                 </li>
-                <li><a ng-show='isLoggedIn()'>Logout</a>
+                <li><a ui-sref="logout" ng-show='isLoggedIn()'>Logout</a>
                 </li>
             </ul>
 

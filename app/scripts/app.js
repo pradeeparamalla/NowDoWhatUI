@@ -48,6 +48,11 @@
                 url: '/signUp',
                 templateUrl: 'views/signup.html',
                 controller: 'signUpCtrl'
+            })
+            .state('logout', {
+                url: '/logout',
+                templateUrl: 'views/logout.html',
+                controller: 'logoutCtrl'
             });
     }]);
 
