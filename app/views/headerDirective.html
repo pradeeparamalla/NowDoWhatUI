@@ -14,11 +14,13 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a ui-sref="signIn">Sign in</a>
+                <li><a ui-sref="signIn" ng-show="!isLoggedIn()">Sign in</a>
                 </li>
-                <li><a>|</a>
                 </li>
-                <li><a ui-sref="signUp">Sign up</a>
+                <li><a ui-sref="signUp" ng-show='!isLoggedIn()'>Sign up</a>
+                </li>
+                </li>
+                <li><a ng-show='isLoggedIn()'>Logout</a>
                 </li>
             </ul>
 

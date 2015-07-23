@@ -4,7 +4,14 @@
 
     var app = angular.module('nowDoWhatUiApp.header', []);
 
-    app.controller('headerCtrl', ['$scope', '$http', function ($scope, $http) {
+    app.controller('headerCtrl', ['$scope', 'AuthService', function ($scope, AuthService) {
+        var me = $scope;
+
+
+        me.isLoggedIn = function () {
+            return AuthService.isLoggedIn();
+        }
+
 
     }]);
 
@@ -12,6 +19,7 @@
         return {
             restrict: 'E',
             templateUrl: 'views/headerDirective.html',
+            controller: 'headerCtrl',
             replace: true
         };
     });
